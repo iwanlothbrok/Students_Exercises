@@ -1,0 +1,3 @@
+﻿  ReverseString.cpp
+C:\Users\JupiterSoft\Documents\GitHub\Students\exercises\C++\ConsoleApplication1\ReverseString\ReverseString.cpp(8,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ReverseString.vcxproj -> C:\Users\JupiterSoft\Documents\GitHub\Students\exercises\C++\ConsoleApplication1\x64\Debug\ReverseString.exe
