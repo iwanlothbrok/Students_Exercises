@@ -1,0 +1,4 @@
+﻿  CharIndexDiffrence.cpp
+C:\Users\JupiterSoft\Documents\GitHub\SoftUni\C++\CharStringExercises2.0\CharIndexDiffrence\CharIndexDiffrence.cpp(12,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\JupiterSoft\Documents\GitHub\SoftUni\C++\CharStringExercises2.0\CharIndexDiffrence\CharIndexDiffrence.cpp(13,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CharIndexDiffrence.vcxproj -> C:\Users\JupiterSoft\Documents\GitHub\SoftUni\C++\CharStringExercises2.0\x64\Debug\CharIndexDiffrence.exe
