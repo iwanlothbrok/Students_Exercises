@@ -117,10 +117,6 @@ namespace OnlineShopCourseWork.Services.Roles
             {
                 con.Close();
             }
-
-
-
-
         }
 
         public void Insert(Role role)
