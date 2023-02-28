@@ -9,6 +9,10 @@ namespace OnlineShopCourseWork.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {
+
+
         }
+
+        // naprawi modelite kato dbSETS
     }
 }

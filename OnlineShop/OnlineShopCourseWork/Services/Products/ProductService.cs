@@ -14,10 +14,12 @@ namespace OnlineShopCourseWork.Services.Products
         public int Create(ProductsInputModel model)
         {
             
-            string cmd = $"INSERT INTO Products(ImageId,ProductName,Price,CategoryId) VALUES({model.ImageId},'{model.ProductName}',{model.Price},{model.CategoryId}))";
+            string cmd = $"INSERT INTO Products(ImageId,ProductName,Price,CategoryId) VALUES(@ImageId,'{model.ProductName}',{model.Price},{model.CategoryId}))";
 
             
             MySqlCommand com = new MySqlCommand(cmd, con);
+            com.Parameters.AddWithValue("@ImageId", model.ImageId);
+            // naprawi gi po syshtiqt naching !!!
             try
             {
                 con.Open();
@@ -27,7 +29,7 @@ namespace OnlineShopCourseWork.Services.Products
             }
             catch(Exception ex)
             {
-                return 0;
+                return 0; 
                 throw ex;
             }
             finally

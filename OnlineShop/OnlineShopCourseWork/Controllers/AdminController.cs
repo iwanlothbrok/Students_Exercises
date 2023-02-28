@@ -33,7 +33,7 @@ namespace OnlineShopCourseWork.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(ProductsInputModel model)
+        public IActionResult CreateProduct(ProductsInputModel model, List<IFormFile> ProductPhoto)
         {
             if (this.ModelState.IsValid == false)
             {
