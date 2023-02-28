@@ -7,7 +7,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "First_OOP_Example", "First_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EncapsulationExample", "EncapsulationExample\EncapsulationExample.vcxproj", "{95F0682F-58AA-486C-84B8-4568A54C17F6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceExample", "Inheritance\Inheritance.vcxproj", "{2E49792A-3547-4ABD-BF3E-AFF5B2704255}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceAndPolymorphismExample", "Inheritance\Inheritance.vcxproj", "{2E49792A-3547-4ABD-BF3E-AFF5B2704255}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetterAndSetter_Example", "GetterAndSetter_Example\GetterAndSetter_Example.vcxproj", "{8259F326-FA52-4262-9394-92EF68CE8834}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{2E49792A-3547-4ABD-BF3E-AFF5B2704255}.Release|x64.Build.0 = Release|x64
 		{2E49792A-3547-4ABD-BF3E-AFF5B2704255}.Release|x86.ActiveCfg = Release|Win32
 		{2E49792A-3547-4ABD-BF3E-AFF5B2704255}.Release|x86.Build.0 = Release|Win32
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Debug|x64.ActiveCfg = Debug|x64
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Debug|x64.Build.0 = Debug|x64
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Debug|x86.ActiveCfg = Debug|Win32
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Debug|x86.Build.0 = Debug|Win32
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Release|x64.ActiveCfg = Release|x64
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Release|x64.Build.0 = Release|x64
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Release|x86.ActiveCfg = Release|Win32
+		{8259F326-FA52-4262-9394-92EF68CE8834}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

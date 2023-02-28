@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-	People* iwan = new People("Iwan", 23);
+	People iwan = People("Iwan", 23);
 
-	iwan->IncreaseSalary();
+	cout << iwan.Name << endl;
+	cout << iwan.age << endl;
 }
