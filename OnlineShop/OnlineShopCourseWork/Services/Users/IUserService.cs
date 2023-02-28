@@ -1,4 +1,4 @@
-﻿using OnlineShopCourseWork.Models;
+﻿using OnlineShopCourseWork.Data.Models;
 
 namespace OnlineShopCourseWork.Services.Users
 {

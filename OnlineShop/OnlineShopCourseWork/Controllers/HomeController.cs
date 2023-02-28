@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnlineShopCourseWork.Models;
+using OnlineShopCourseWork.Data.Models;
 using OnlineShopCourseWork.Services.EmailSenders;
 using System.Diagnostics;
 

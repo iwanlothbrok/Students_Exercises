@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using OnlineShopCourseWork.Data.Models;
 using OnlineShopCourseWork.Globals;
-using OnlineShopCourseWork.Models;
 using OnlineShopCourseWork.Services.Roles;
 using OnlineShopCourseWork.Services.Users;
 using System.ServiceProcess;

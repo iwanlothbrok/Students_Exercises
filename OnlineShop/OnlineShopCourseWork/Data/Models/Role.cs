@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace OnlineShopCourseWork.Models
+namespace OnlineShopCourseWork.Data.Models
 {
-    public sealed  class Role : IdentityRole<int>
+    public sealed class Role : IdentityRole<int>
     {
         public string RoleName { get; set; }
-        
+
     }
 }

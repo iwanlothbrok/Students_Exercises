@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using OnlineShopCourseWork.Models;
+using OnlineShopCourseWork.Data.Models;
 using System.Data;
 
 namespace OnlineShopCourseWork.Services.Roles

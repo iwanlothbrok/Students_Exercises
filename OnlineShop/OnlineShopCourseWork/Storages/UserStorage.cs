@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using OnlineShopCourseWork.Models;
+using OnlineShopCourseWork.Data.Models;
 using OnlineShopCourseWork.Services.Roles;
 using OnlineShopCourseWork.Services.Users;
 using System.Security.Claims;

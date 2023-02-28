@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using OnlineShopCourseWork.Data;
-using OnlineShopCourseWork.Models;
+using OnlineShopCourseWork.Data.Models;
 using OnlineShopCourseWork.Services.Roles;
 
 namespace OnlineShopCourseWork.Storages

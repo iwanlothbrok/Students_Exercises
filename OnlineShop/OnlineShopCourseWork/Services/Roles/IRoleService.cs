@@ -1,4 +1,4 @@
-﻿using OnlineShopCourseWork.Models;
+﻿using OnlineShopCourseWork.Data.Models;
 using System.Reflection.Metadata;
 
 namespace OnlineShopCourseWork.Services.Roles

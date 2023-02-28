@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShopCourseWork.Globals;
-using OnlineShopCourseWork.InputModels;
+using OnlineShopCourseWork.InputModels.Products;
 using OnlineShopCourseWork.Services.Products;
 
 namespace OnlineShopCourseWork.Controllers

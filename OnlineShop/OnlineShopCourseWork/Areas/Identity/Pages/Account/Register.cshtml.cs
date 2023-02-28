@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using OnlineShopCourseWork.Models;
+using OnlineShopCourseWork.Data.Models;
 
 namespace OnlineShopCourseWork.Areas.Identity.Pages.Account
 {

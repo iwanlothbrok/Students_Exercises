@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace OnlineShopCourseWork.Models
+namespace OnlineShopCourseWork.Data.Models
 {
     public sealed class User : IdentityUser<int>
     {

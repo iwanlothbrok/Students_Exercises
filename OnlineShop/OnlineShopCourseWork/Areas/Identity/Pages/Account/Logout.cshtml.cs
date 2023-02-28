@@ -5,7 +5,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlineShopCourseWork.Models;
+using OnlineShopCourseWork.Data.Models;
 
 namespace OnlineShopCourseWork.Areas.Identity.Pages.Account
 {

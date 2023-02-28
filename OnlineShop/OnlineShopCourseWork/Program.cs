@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Identity;
 using MySql.Data.MySqlClient;
-using OnlineShopCourseWork.Models;
 using OnlineShopCourseWork.Storages;
 using OnlineShopCourseWork.Data;
 using System.Runtime;
@@ -8,6 +7,7 @@ using OnlineShopCourseWork.Services.Users;
 using OnlineShopCourseWork.Services.Roles;
 using System.ServiceProcess;
 using OnlineShopCourseWork.Seed;
+using OnlineShopCourseWork.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
