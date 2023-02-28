@@ -13,9 +13,10 @@ namespace OnlineShopCourseWork.Services.Products
         }
         public int Create(ProductsInputModel model)
         {
+            
             string cmd = $"INSERT INTO Products(ImageId,ProductName,Price,CategoryId) VALUES({model.ImageId},'{model.ProductName}',{model.Price},{model.CategoryId}))";
 
-           
+            
             MySqlCommand com = new MySqlCommand(cmd, con);
             try
             {
