@@ -1,8 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System.Drawing;
-
-namespace OnlineShopCourseWork.Services.Categories
+﻿namespace OnlineShopCourseWork.Services.Categories
 {
+    using MySql.Data.MySqlClient;
     public class CategoryService : ICategoryService
     {
         private readonly MySqlConnection con;
@@ -11,6 +9,29 @@ namespace OnlineShopCourseWork.Services.Categories
         {
             this.con = con;
         }
+
+        //        using (SqlConnection connection = new SqlConnection(connectionString))
+        //        {
+        //            connection.Open();
+
+        //            // Insert category 1
+        //            string insertQuery1 = "INSERT INTO Category (name) VALUES (@name)";
+        //SqlCommand command1 = new SqlCommand(insertQuery1, connection);
+        //command1.Parameters.AddWithValue("@name", "Category 1");
+        //            command1.ExecuteNonQuery();
+
+        //            // Insert category 2
+        //            string insertQuery2 = "INSERT INTO Category (name) VALUES (@name)";
+        //SqlCommand command2 = new SqlCommand(insertQuery2, connection);
+        //command2.Parameters.AddWithValue("@name", "Category 2");
+        //            command2.ExecuteNonQuery();
+
+        //            // Insert category 3
+        //            string insertQuery3 = "INSERT INTO Category (name) VALUES (@name)";
+        //SqlCommand command3 = new SqlCommand(insertQuery3, connection);
+        //command3.Parameters.AddWithValue("@name", "Category 3");
+        //            command3.ExecuteNonQuery();
+        //        }
         public int Create(string name)
         {
             if (name == null || name.Length < 3)
@@ -48,7 +69,7 @@ namespace OnlineShopCourseWork.Services.Categories
         {
             //CHECK IF CATEGORY EXIST 
             // command for getting if there is something like this 
-            string checkCmd = $"SELECT * FROM Categories WHERE Name = {name == null : return -1 ? name}";
+            string checkCmd = $"SELECT * FROM Categories WHERE Name = {name == null: return -1 ? name}";
 
             //creating my sql command 
             MySqlCommand comForCheck = new MySqlCommand(checkCmd, con);
@@ -84,6 +105,35 @@ namespace OnlineShopCourseWork.Services.Categories
 
             return res;
         }
+
+        //the other type
+        //public int CheckName(string name)
+        //{
+        //    int result = -1;
+        //    using (con)
+        //    {
+        //        con.Open();
+        //        string commandText = "SELECT Name FROM Category";
+
+        //        using (MySqlCommand command = new MySqlCommand(commandText, con))
+        //        {
+        //            using (MySqlDataReader reader = command.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    string categoryName = reader.GetString(0);
+        //                    if (categoryName.Equals(name, StringComparison.OrdinalIgnoreCase))
+        //                    {
+        //                        result = 1;
+        //                        break;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
     }
 }
+
 
