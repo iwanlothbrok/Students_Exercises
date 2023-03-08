@@ -11,6 +11,7 @@ public:
 	int age;
 	vector<string> Members;
 
+	Family() {};
 	Family(string name, int age)
 	{
 		this->name = name;
@@ -22,6 +23,11 @@ public:
 		for (string str : Members) {
 			cout << str << std::endl;
 		}
+	}
+
+	void Speak()
+	{
+		cout << "Hi form family";
 	}
 };
 
