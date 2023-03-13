@@ -1,0 +1,32 @@
+﻿@model HomeViewModel 
+<html>
+	<header>
+
+	</header>
+	<body>
+		<h1>Header</h1>
+		<h2>Header</h2>
+		<div>
+
+		@*	<input type = "button"
+
+		 value= "Go Somewhere Else"
+
+		 onclick= "location.href='<%: Url.Action("Create", "Home") %>'" />*@
+
+			<input type = "button" value= "Clear" onclick= "location.href='@Url.Action("Clear", "Home")'" />
+			
+			@{
+
+		foreach(var a in Model)
+		{
+			
+		}
+			}
+			<label asp-asp-for=""></label>
+			<label></label>
+			<label></label>
+			<label></label>
+		</div>
+	</body>
+</html>
