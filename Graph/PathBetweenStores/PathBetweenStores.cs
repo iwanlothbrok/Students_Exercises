@@ -6,82 +6,123 @@ using Wintellect.PowerCollections;
 
 namespace PathBetweenStores
 {
-    public class PathBetweenStores
-    {
-        private static Dictionary<int, List<Edge>> edgesByNode;
+	public class PathBetweenStores
+	{
+		private static Dictionary<int, List<Edge>> edgesByNode;
 
-        public static void Main()
-        {
-            int streets = int.Parse(Console.ReadLine());
+		public static void Main()
+		{
+			int streets = int.Parse(Console.ReadLine());
 
-            edgesByNode = ReadEdges(streets);
+			edgesByNode = ReadEdges(streets);
 
-            int start = int.Parse(Console.ReadLine());
-            int end = int.Parse(Console.ReadLine());
+			int start = int.Parse(Console.ReadLine());
+			int end = int.Parse(Console.ReadLine());
 
-            int[] distance = new int[edgesByNode.Keys.Max() + 1];
+			int[] distance = new int[edgesByNode.Keys.Max() + 1];
 
-            Array.Fill(distance, int.MaxValue);
-            distance[start] = 0;
+			for (int i = 0; i < distance.Length; i++)
+			{
+				distance[i] = int.MaxValue;
+			}
+			distance[start] = 0;
+			//Array.Fill(distance, int.MaxValue);
+			//distance[start] = 0;
 
-            int[] previous = new int[edgesByNode.Keys.Max() + 1];
-            previous[start] = -1;
+			int[] previous = new int[edgesByNode.Keys.Max() + 1];
+			previous[start] = -1;
 
-            OrderedBag<int> queue = new OrderedBag<int>(
-                Comparer<int>.Create((f, s) => distance[f] - distance[s]));
+			OrderedBag<int> queue = new OrderedBag<int>(
+				Comparer<int>.Create((f, s) => distance[f] - distance[s]));
 
-            queue.Add(start);
+			queue.Add(start);
 
-            // Implement algorithm here
+			while (queue.Count > 0)
+			{
+				int minNode = queue.RemoveFirst();
+				List<Edge> children = edgesByNode[minNode];
 
-            Console.WriteLine(distance[end]);
-            Console.WriteLine(PrintPath(previous, end));
-        }
+				if (minNode == end)
+				{
+					break;
+				}
 
-        private static string PrintPath(int[] previous, int end)
-        {
-            Stack<int> path = new Stack<int>();
-            int node = end;
-            while (node != -1)
-            {
-                path.Push(node);
-                node = previous[node];
-            }
+				foreach (Edge childEdge in children)
+				{
+					int childNode = childEdge.First == minNode
+													? childEdge.Second
+													: childEdge.First;
 
-            return string.Join(" ", path);
-        }
+					if (distance[childNode] == int.MaxValue)
+					{
+						queue.Add(childNode);
+					}
 
-        private static Dictionary<int, List<Edge>> ReadEdges(int edgeQty)
-        {
-            Dictionary<int, List<Edge>> result = new Dictionary<int, List<Edge>>();
-            for (int i = 0; i < edgeQty; i++)
-            {
-                int[] edgeData = Console.ReadLine()
-                    .Split(", ")
-                    .Select(int.Parse)
-                    .ToArray();
+					int newDistance = childEdge.Weight + distance[minNode];
+					if (newDistance < distance[childNode])
+					{
+						distance[childNode] = newDistance;
+						previous[childNode] = minNode;
+						queue = new OrderedBag<int>(
+							queue, Comparer<int>.Create((f, s) => distance[f] - distance[s]));
+					}
+				}
+			}
 
-                int firstNode = edgeData[0];
-                int secondNode = edgeData[1];
-                int weight = edgeData[2];
+			if (distance[end] == int.MaxValue)
+			{
+				Console.WriteLine("There is no such path.");
+				return;
+			}
 
-                Edge edge = new Edge(firstNode, secondNode, weight);
+			Console.WriteLine(distance[end]);
+			Console.WriteLine(PrintPath(previous, end));
+		}
 
-                if (!result.ContainsKey(firstNode))
-                {
-                    result.Add(firstNode, new List<Edge>());
-                }
+		private static string PrintPath(int[] previous, int end)
+		{
+			Stack<int> path = new Stack<int>();
+			int node = end;
+			while (node != -1)
+			{
+				path.Push(node);
+				node = previous[node];
+			}
 
-                if (!result.ContainsKey(secondNode))
-                {
-                    result.Add(secondNode, new List<Edge>());
-                }
+			return string.Join(" ", path);
+		}
 
-                result[firstNode].Add(edge);
-                result[secondNode].Add(edge);
-            }
+		private static Dictionary<int, List<Edge>> ReadEdges(int edgeQty)
+		{
+			Dictionary<int, List<Edge>> result = new Dictionary<int, List<Edge>>();
+			for (int i = 0; i < edgeQty; i++)
+			{
+				int[] edgeData = Console.ReadLine()
+					.Split(", ")
+					.Select(int.Parse)
+					.ToArray();
 
-            return result;
-        }
-    }
+				int firstNode = edgeData[0];
+				int secondNode = edgeData[1];
+				int weight = edgeData[2];
+
+				Edge edge = new Edge(firstNode, secondNode, weight);
+
+				if (!result.ContainsKey(firstNode))
+				{
+					result.Add(firstNode, new List<Edge>());
+				}
+
+				if (!result.ContainsKey(secondNode))
+				{
+					result.Add(secondNode, new List<Edge>());
+				}
+
+				result[firstNode].Add(edge);
+				result[secondNode].Add(edge);
+			}
+
+			return result;
+		}
+	}
 }

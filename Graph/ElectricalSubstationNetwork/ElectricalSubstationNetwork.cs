@@ -21,8 +21,6 @@ namespace ElectricalSubstationNetwork
 
 			bool[] visited = new bool[nodesCount];
 
-			// Implement algorithm here
-
 			while (sorted.Count > 0)
 			{
 				int node = sorted.Pop();
@@ -38,10 +36,22 @@ namespace ElectricalSubstationNetwork
 			}
 		}
 
-		//private static Stack<int> TopologicalSort()
-		//{
+		private static Stack<int> TopologicalSort()
+		{
+			Stack<int> result = new Stack<int>();
 
-		//}
+			bool[] visited = new bool[graph.Length];
+
+			for (int i = 0; i < graph.Length; i++)
+			{
+				if (visited[i] == false)
+				{
+					Dfs(graph, i, visited, result);
+				}
+			}
+
+			return result;
+		}
 
 		private static void Dfs(List<int>[] source, int node, bool[] visited, Stack<int> result)
 		{
