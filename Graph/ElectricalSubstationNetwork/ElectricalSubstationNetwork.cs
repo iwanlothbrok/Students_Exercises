@@ -6,98 +6,85 @@ namespace ElectricalSubstationNetwork
 {
 	public class ElectricalSubstationNetwork
 	{
-		private static List<int>[] graph;
-		private static List<int>[] reversedGraph;
-		private static Stack<int> sorted;
+		private static List<Edge> edges;
 
 		public static void Main()
 		{
-			int nodesCount = int.Parse(Console.ReadLine());
-			int linesCount = int.Parse(Console.ReadLine());
+			int towns = int.Parse(Console.ReadLine());
+			int streets = int.Parse(Console.ReadLine());
 
-			(graph, reversedGraph) = ReadGraph(nodesCount, linesCount);
+			edges = ReadEdges(streets);
 
-			sorted = TopologicalSort();
+			List<Edge> sortedEdges = edges
+				.OrderBy(edge => edge.Weight)
+				.ToList();
 
-			bool[] visited = new bool[nodesCount];
-
-			while (sorted.Count > 0)
+			int[] parents = new int[towns];
+			for (int i = 0; i < towns; i++)
 			{
-				int node = sorted.Pop();
-
-				if (visited[node])
-				{
-					continue;
-				}
-
-				Stack<int> component = new Stack<int>();
-				Dfs(reversedGraph, node, visited, component);
-				Console.WriteLine(string.Join(", ", component));
+				parents[i] = i;
 			}
-		}
 
-		private static Stack<int> TopologicalSort()
-		{
-			Stack<int> result = new Stack<int>();
+			int totalCost = 0;
 
-			bool[] visited = new bool[graph.Length];
-
-			for (int i = 0; i < graph.Length; i++)
+			foreach (Edge edge in sortedEdges)
 			{
-				if (visited[i] == false)
+				int root1 = GetRoot(parents, edge.First);
+				int root2 = GetRoot(parents, edge.Second);
+
+				if (root1 != root2)
 				{
-					Dfs(graph, i, visited, result);
+					parents[root2] = root1;
+					totalCost += edge.Weight;
 				}
 			}
 
-			return result;
+			// Check if all towns are connected
+			int root = GetRoot(parents, 0);
+			for (int i = 1; i < towns; i++)
+			{
+				if (GetRoot(parents, i) != root)
+				{
+					totalCost = int.MaxValue;
+					break;
+				}
+			}
+			Console.WriteLine($"Total cost: {totalCost}");
 		}
 
-		private static void Dfs(List<int>[] source, int node, bool[] visited, Stack<int> result)
+		private static int GetRoot(int[] parents, int node)
 		{
-			if (visited[node])
+			while (node != parents[node])
 			{
-				return;
+				node = parents[node];
 			}
 
-			visited[node] = true;
-
-			foreach (var child in source[node])
-			{
-				Dfs(source, child, visited, result);
-			}
-
-			result.Push(node);
+			return node;
 		}
 
-		private static (List<int>[] graph, List<int>[] reversedGraph) ReadGraph(int nodesCount, int linesCount)
+		private static List<Edge> ReadEdges(int edges)
 		{
-			List<int>[] graph = new List<int>[nodesCount];
-			List<int>[] reversedGraph = new List<int>[nodesCount];
-
-			for (int i = 0; i < nodesCount; i++)
+			List<Edge> result = new List<Edge>();
+			for (int i = 0; i < edges; i++)
 			{
-				graph[i] = new List<int>();
-				reversedGraph[i] = new List<int>();
-			}
-
-			for (int i = 0; i < linesCount; i++)
-			{
-				int[] data = Console.ReadLine()
-					.Split(", ")
+				int[] edgeData = Console.ReadLine()
+					.Split(" - ")
 					.Select(int.Parse)
 					.ToArray();
 
-				int node = data[0];
-				for (int j = 1; j < data.Length; j++)
+				int first = edgeData[0];
+				int second = edgeData[1];
+				int weight = edgeData[2];
+
+				result.Add(new Edge
 				{
-					int child = data[j];
-					graph[node].Add(child);
-					reversedGraph[child].Add(node);
-				}
+					First = first,
+					Second = second,
+					Weight = weight
+				});
 			}
 
-			return (graph, reversedGraph);
+			return result;
 		}
 	}
 }

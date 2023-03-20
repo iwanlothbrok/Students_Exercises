@@ -25,21 +25,41 @@ namespace UndefinedPath
             Array.Fill(previous, -1);
 
             distances[source] = 0;
-            
-            // Implement algorithm here
 
-            Stack<int> path = new Stack<int>();
+			for (int i = 1; i <= nodeCount - 1; i++)
+			{
+				foreach (var edge in edges)
+				{
+					if (distances[edge.From] != double.PositiveInfinity && distances[edge.From] + edge.Weight < distances[edge.To])
+					{
+						distances[edge.To] = distances[edge.From] + edge.Weight;
+						previous[edge.To] = edge.From;
+					}
+				}
+			}
 
-            int node = destination;
-            while (node != -1)
-            {
-                path.Push(node);
-                node = previous[node];
-            }
+			// check for negative cycles
+			foreach (var edge in edges)
+			{
+				if (distances[edge.From] != double.PositiveInfinity && distances[edge.From] + edge.Weight < distances[edge.To])
+				{
+					Console.WriteLine("Undefined");
+					return;
+				}
+			}
 
-            Console.WriteLine(string.Join(" ", path));
-            Console.WriteLine(distances[destination]);
-        }
+			Stack<int> path = new Stack<int>();
+
+			int node = destination;
+			while (node != -1)
+			{
+				path.Push(node);
+				node = previous[node];
+			}
+
+			Console.WriteLine(string.Join(" ", path));
+			Console.WriteLine(distances[destination]);
+		}
 
         private static List<Edge> ReadGraph(int edgeCount)
         {
