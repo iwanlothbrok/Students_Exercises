@@ -30,17 +30,34 @@ namespace BlackFriday
 
             int[] parents = Enumerable.Repeat(-1, nodeCount)
                 .ToArray();
+                
+			int result = 0;
 
-            foreach (int node in nodes)
+
+			foreach (int node in nodes)
             {
                 parents[node] = node;
             }
 
-            int result = 0;
-            // Implement algorithm here
+			foreach (Edge edge in sortedEdges)
+			{
+				int root1 = GetRoot(parents, edge.First);
+				int root2 = GetRoot(parents, edge.Second);
 
-            Console.WriteLine(result);
-        }
+				if (root1 != root2)
+				{
+					parents[root1] = root2;
+					result += edge.Weight;
+
+					if (nodes.Count == 1)
+					{
+						break;
+					}
+				}
+			}
+
+			Console.WriteLine(result);
+		}
 
         private static int GetRoot(int[] parents, int node)
         {
