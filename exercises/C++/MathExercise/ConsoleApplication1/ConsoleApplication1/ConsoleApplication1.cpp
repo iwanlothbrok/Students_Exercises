@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -28,6 +28,10 @@ void figuri(int a)
 	int remain = a;
 
 	while (remain >= 4) {
+		if (remain == 3 || remain == 6 || remain == 9)
+		{
+			break;
+		}
 		squares++;
 		remain -= 4;
 	}
