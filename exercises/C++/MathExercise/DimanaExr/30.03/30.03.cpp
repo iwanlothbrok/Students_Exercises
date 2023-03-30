@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -10,10 +10,6 @@ int main()
 	do {
 		cin >> n;
 
-		if (n == 0)
-		{
-			return;
-		}
 		figuri(n);
 	} while (n != 0);
 
@@ -37,7 +33,7 @@ void figuri(int a)
 		remain -= 3;
 	}
 
-	if (remain != 0)
+	if (squares == 0 & triangles == 0 & remain == 1)
 	{
 		cout << "NO" << endl;
 	}
