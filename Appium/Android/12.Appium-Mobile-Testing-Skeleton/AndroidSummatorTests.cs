@@ -9,7 +9,7 @@ namespace AppiumMobileTests
 {
 	public class AndroidSummatorTests
 	{
-		private const string AppiumServerUri = "http://[::1]:4732/wd/hub";
+		private const string AppiumServerUri = "http://[::1]:4723/wd/hub";
 		private const string SummatorAppPath = @"C:\Users\JupiterSoft\Documents\GitHub\Students\Appium\Android\12.Appium-Mobile-Testing-Resources\com.example.androidappsummator.apk"; //CHECK IF ITS RIGHT
 		private AndroidDriver<AndroidElement> driver;
 
