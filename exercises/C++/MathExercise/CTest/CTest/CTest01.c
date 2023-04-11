@@ -1,18 +1,87 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 
-void main() {
-	printf("Hello\n");
-	system("pause");
+/// <summary>
+/// FOR PRINTING LONG => %ld 
+/// Символна константа и низова константа, съдържащи един-единствен символ: 'х' не е същото като "х". 
+///'х' представлява цяло число, използвано за представяне на числовата стойност на буквата х в кодовата таблица на компютъра.
+///"х" представлява масив от символи, който съдържа само един символ(буквата х) и '\0' накрая.
+/// </summary>
 
-	char greetings[] = { 'H','i','\0' };
-	//In your example, the character array "greetings" is being used to store the string "Hi".
-	//	By adding the null terminator '\0' at the end of the string, you are indicating to the compiler that 
-	//	this is the end of the string.This is important because C functions that work with strings
-	//	, such as strlen() or strcmp(), use the null terminator to determine the length of the stringand 
-	//	when to stop processing it.
 
-	//	If you forget to add the null terminator at the end of a string,
-	//	C functions that work with strings will continue reading past the end of the
-	//	array, resulting in undefined behavior, such as a segmentation fault or unexpected
-	//	program behavio
-}
+
+//
+//void main() {
+//	printf("Hello\n");
+//	system("pause");
+//
+//	char greetings[] = { 'H','i','\0' };
+//}
+
+
+
+/// <summary>
+/// GETTING EVERY CHAR FROM CHAR[]
+///EOF => С употребата на тази символна константа ние сме сигурни, че нищо в програмата не зависи от точно определена числена стойност.
+/// </summary>
+//void main() {
+//
+//	int c;
+//	c = getchar();
+//	while (c != EOF){
+//		putchar(c);
+//		c = getchar();
+//	}
+//}
+
+
+//----------------------------
+//void main() {
+//	int i, c, nwhite, nother;
+//	int ndigit[10];
+//
+//	nwhite = nother = 0;
+//
+//	for (i = 0; i < 10; i++)
+//	{
+//		ndigit[i] = 0;
+//
+//		while ((c = getchar()) != EOF)
+//		{
+//			if (c>= '0' && c <= '9')
+//			{
+//				++ndigit[c-'0']; // check whats this
+//			}
+//			else if (c == ' ' || c == '/n' || c == 't')
+//			{
+//				nwhite++;
+//			}
+//			else
+//			{
+//				nother++;
+//			}
+//		}
+//	}
+//
+//	printf("digits =");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf(" %d", ndigit[i]);
+//	}
+//	printf(", white space = %d, other = %d", nwhite, nother);
+//}
+
+//Напишете програма, която отпечатва входа си, като всяка дума е поставена на отделен ред.
+//
+//#include <stdio.h>
+//
+//int main() {
+//    char c;
+//    while ((c = getchar()) != EOF) {
+//        putchar(c);
+//        if (c == ' ' || c == '\t' || c == '\n') {
+//            putchar('\n');
+//        }
+//    }
+//
+//    return 0;
+//}
