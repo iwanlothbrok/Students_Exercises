@@ -12,7 +12,7 @@ struct Stack {
 };
 
 struct QueueNode {
-    int stackNumber;
+    Stack* insideStack;
     QueueNode* next;
 };
 
@@ -53,7 +53,7 @@ void printStack(Stack s) {
     cout << endl;
 }
 
-void enqueue(Queue& q, int stackNumber) {
+void enqueue(Queue& q, Stack& s) {
     QueueNode* newNode = new QueueNode;
     newNode->stackNumber = stackNumber;
     newNode->next = nullptr;
@@ -103,10 +103,10 @@ int main() {
     q.front = q.rear = nullptr; // initialize queue to be empty
 
     // enqueue the stacks to be processed
-    enqueue(q, 0);
+    enqueue(q, 0); 
     enqueue(q, 1);
     enqueue(q, 2);
-    enqueue(q, 0);
+    enqueue(q, 0);                    
     enqueue(q, 1);
     enqueue(q, 2);
 
