@@ -21,11 +21,21 @@ void main()
 
 	//printf("%s",name);
 
-	// .03 struct
-	struct Student s1;
-	s1.age = 10;
-	// s1.name = "Gogo"; -- > ne raboti 
-	strcpy(s1.name, "Gogo"); // raboti
+	//// .03 struct
+	//struct Student s1;
+	//s1.age = 10;
+	//// s1.name = "Gogo"; -- > ne raboti 
+	//strcpy(s1.name, "Gogo"); // raboti
+
+	// $"" in C
+	//char name[] = "Iwcho";
+	char name[50];
+
+	scanf("%s", &name);
+
+
+
+	printf("Hello my name is %s", name);
 
 	system("pause");
 }

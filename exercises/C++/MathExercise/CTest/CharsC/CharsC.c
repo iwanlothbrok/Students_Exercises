@@ -1,12 +1,16 @@
 // CharsC.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
-#include <iostream>
+#include <stdio.h>
 
 int main()
 {
 	// $"" in C
-	char name[] = "Iwcho";
+	//char name[] = "Iwcho";
+	char name[50];
+
+	scanf("%s", &name);
+
+
 
 	printf("Hello my name is %s", name);
 }
