@@ -47,5 +47,7 @@
 
 // direktno setwash wsichktie na 0
 //int arr[10] = { 0 };
+// 
+// 
 // setwane ne stoinostite direktno w skobite
 //int arr[10] = { [0] = 4,[5] = 2 };
