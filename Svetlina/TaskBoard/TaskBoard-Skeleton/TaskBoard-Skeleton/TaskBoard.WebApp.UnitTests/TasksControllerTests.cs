@@ -3,6 +3,7 @@ using NUnit.Framework;
 using NUnit.Framework.Internal.Execution;
 using System;
 using System.Linq;
+using TaskBoard.Data;
 using TaskBoard.Tests.Common;
 using TaskBoard.WebApp.Controllers;
 using TaskBoard.WebApp.Models.Task;
@@ -58,6 +59,29 @@ namespace TaskBoard.WebApp.UnitTests
         [Test]
         public void Test_DeletePage_ValidId()
         {
+            // create a task from model
+            var newTask = new Task()
+            {
+                Title = "Test Task" + DateTime.Now.Ticks,
+                Description = "Task to test if the tasks creation is succsessful",
+                CreatedOn = DateTime.Now,
+                BoardId = this.testDb.OpenBoard.Id,
+                OwnerId = this.testDb.UserMaria.Id
+            };
+
+            this.dbContext.Add(newTask);
+            this.dbContext.SaveChanges();
+
+            // Act
+            var result = this.controller.Delete(newTask.Id);
+
+            // Assert 
+            var viewResult = result as ViewResult;
+            Assert.IsNotNull(viewResult);
+
+
+            var resultModel = viewResult.Model as TaskViewModel;
+            Assert.IsNotNull(resultModel);
         }
 
         [Test]
