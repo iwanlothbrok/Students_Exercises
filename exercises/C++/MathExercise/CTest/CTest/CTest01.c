@@ -174,3 +174,58 @@ int main()
 
     return 0;
 }
+///////
+#include <stdio.h>
+
+#define MAX_SIZE 100 // Maximum size of the array
+
+int main()
+{
+    int arr[MAX_SIZE], size, i, j, min_idx, temp;
+
+    // Get the size of the array from the user
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+
+    // Get elements from the console and store them in the array
+    printf("Enter elements of the array:\n");
+    for (i = 0; i < size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Print the original array
+    printf("Original array: ");
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Sort the array in ascending order using selection sort
+    for (i = 0; i < size - 1; i++)
+    {
+        min_idx = i;
+
+        for (j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[min_idx])
+            {
+                min_idx = j;
+            }
+        }
+
+        // Swap the minimum element with the current element
+        temp = arr[i];
+        arr[i] = arr[min_idx];
+        arr[min_idx] = temp;
+    }
+
+    // Print the sorted array
+    printf("\nSorted array in ascending order: ");
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
