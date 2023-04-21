@@ -86,3 +86,91 @@
 //    return 0;
 //}
 
+#include <stdio.h>
+
+#define MAX_SIZE 100 // Maximum size of the array
+
+int main()
+{
+    int arr[MAX_SIZE], size, i, pos, value;
+
+    // Get the size of the array from the user
+    printf("Enter size of the array: ");
+    scanf("%d", &size);
+
+    // Get elements from the console and store them in the array
+    printf("Enter elements of the array:\n");
+    for (i = 0; i < size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Print the original array
+    printf("Original array: ");
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Reverse the array
+    printf("\nReversed array: ");
+    for (i = size - 1; i >= 0; i--)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Remove an element from the array
+    printf("\nEnter the position of the element to be removed: ");
+    scanf("%d", &pos);
+
+    if (pos < 0 || pos >= size)
+    {
+        printf("Invalid position!\n");
+    }
+    else
+    {
+        for (i = pos; i < size - 1; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+
+        size--;
+
+        // Print the updated array
+        printf("Updated array: ");
+        for (i = 0; i < size; i++)
+        {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    // Add an element to the array
+    printf("\nEnter the position where you want to insert an element: ");
+    scanf("%d", &pos);
+    printf("Enter the value to be inserted: ");
+    scanf("%d", &value);
+
+    if (pos < 0 || pos > size)
+    {
+        printf("Invalid position!\n");
+    }
+    else
+    {
+        for (i = size; i > pos; i--)
+        {
+            arr[i] = arr[i - 1];
+        }
+
+        arr[pos] = value;
+        size++;
+
+        // Print the updated array
+        printf("Updated array: ");
+        for (i = 0; i < size; i++)
+        {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    return 0;
+}
