@@ -3,6 +3,7 @@ using NUnit.Framework;
 using NUnit.Framework.Internal.Execution;
 using System;
 using System.Linq;
+using System.Net;
 using TaskBoard.Data;
 using TaskBoard.Tests.Common;
 using TaskBoard.WebApp.Controllers;
@@ -82,26 +83,79 @@ namespace TaskBoard.WebApp.UnitTests
 
             var resultModel = viewResult.Model as TaskViewModel;
             Assert.IsNotNull(resultModel);
+            Assert.AreEqual(resultModel.Id, newTask.Id);
         }
 
         [Test]
         public void Test_Delete_UnauthorizedUser()
         {
+            // Arrange
+            int taskCountBefore = this.dbContext.Tasks.Count();
+
+            var cssTask = this.testDb.CSSTask;
+
+            var model = new TaskViewModel()
+            {
+                Id = cssTask.Id
+            };
+
+            // Act 
+            var result = this.controller.Delete(model);
+
+            // Assert 
+            var unauthorizeRes = result as UnauthorizedResult;
+
+            Assert.AreEqual((int)HttpStatusCode.Unauthorized, unauthorizeRes.StatusCode);
+            Assert.IsNotNull(unauthorizeRes);
         }
 
         [Test]
         public void Test_Edit_ValidId()
         {
+            // Arrange
+            var editTask = this.testDb.EditTask;
+
+            // Act 
+            var result = this.controller.Edit(editTask.Id);
+
+            // Assert
+            var viewResult = result as ViewResult;
+            Assert.IsNotNull(viewResult);
+
+            var resultModel = viewResult.Model as TaskFormModel;
+            Assert.IsNotNull(resultModel);
+            Assert.AreEqual(resultModel.Title, editTask.Title);
         }
 
         [Test]
         public void Test_Edit_InvalidId()
         {
-        }
+			// Act
+			var result = this.controller.Edit(31231);
+
+			// Assert 
+			var unauthorizeRes = result as BadRequestResult;
+
+			Assert.AreEqual((int)HttpStatusCode.BadRequest, unauthorizeRes.StatusCode);
+			Assert.IsNotNull(unauthorizeRes);
+		}
 
         [Test]
         public void Test_Edit_UnauthorizedUser()
         {
-        }
+			// Arrange
+
+			var cssTask = this.testDb.CSSTask;
+
+
+            // Act 
+            var result = this.controller.Edit(cssTask.Id);
+
+			// Assert 
+			var unauthorizeRes = result as UnauthorizedResult;
+
+			Assert.AreEqual((int)HttpStatusCode.Unauthorized, unauthorizeRes.StatusCode);
+			Assert.IsNotNull(unauthorizeRes);
+		}
     }
 }
