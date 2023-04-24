@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-
 using TaskBoard.Tests.Common;
-
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
