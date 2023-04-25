@@ -41,6 +41,37 @@ void addItem(int n)
     }
 }
 
+void nameOrderAsc(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (strcmp(items[j].name, items[j + 1].name) > 0) // first is bigger 
+            {
+                Item temp = items[j];
+                items[j] = items[j++];
+                items[j+1] = temp;
+            }
+        }
+    }
+}
+
+void totalPriceOrderAsc(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (items[j].price * items[i].quantity > items[j].price * items[i].quantity ) // first is bigger 
+            {
+                Item temp = items[j];
+                items[j] = items[j++];
+                items[j + 1] = temp;
+            }
+        }
+    }
+}
 
 int main()
 {
