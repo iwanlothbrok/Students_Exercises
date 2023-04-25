@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{88924a96-ff8a-4263-8d04-67a5d7822e51}</ProjectGuid>
-    <RootNamespace>ArrayExerc</RootNamespace>
+    <ProjectGuid>{4cab1bbc-e5f0-4035-8761-60735a5b628f}</ProjectGuid>
+    <RootNamespace>Files</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Arrays.c" />
+    <ClCompile Include="ReadingWritingFiles.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
