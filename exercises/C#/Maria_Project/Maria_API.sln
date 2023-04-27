@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maria_API", "Maria_API\Maria_API.csproj", "{2AB7E93F-D520-4E13-B13B-6E2B106E9780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maria_WEB", "Maria_WEB\Maria_WEB.csproj", "{AC45ACB5-F73A-430D-ACE9-E0938A1D7888}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AB7E93F-D520-4E13-B13B-6E2B106E9780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB7E93F-D520-4E13-B13B-6E2B106E9780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB7E93F-D520-4E13-B13B-6E2B106E9780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB7E93F-D520-4E13-B13B-6E2B106E9780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC45ACB5-F73A-430D-ACE9-E0938A1D7888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC45ACB5-F73A-430D-ACE9-E0938A1D7888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC45ACB5-F73A-430D-ACE9-E0938A1D7888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC45ACB5-F73A-430D-ACE9-E0938A1D7888}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BF4F2FA-B4C9-47A2-BFF6-CD5AEE5F955F}
+	EndGlobalSection
+EndGlobal
