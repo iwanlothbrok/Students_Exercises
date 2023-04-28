@@ -1,3 +1,0 @@
-﻿  ReverseStringArray.cpp
-C:\Users\JupiterSoft\Documents\GitHub\Students\exercises\C++\ConsoleApplication1\ReverseStringArray\ReverseStringArray.cpp(7,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  ReverseStringArray.vcxproj -> C:\Users\JupiterSoft\Documents\GitHub\Students\exercises\C++\ConsoleApplication1\x64\Debug\ReverseStringArray.exe
