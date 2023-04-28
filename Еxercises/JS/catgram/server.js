@@ -1,5 +1,7 @@
 // importing the express
 const express = require('express');
+//importing handlebars
+const handlebars = require('handlebars');
 
 // instance of express
 const app = express();
@@ -14,12 +16,25 @@ app.use('/static', express.static('public'));
 // localhost:your html file name 
 app.use(express.static('public'));
 
+// configure
+app.engine('handlebars', handlebars({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// setting our project to work with handlebars
+app.set('view engine','hbs');
 
 // setting server with this path '/' to respond 
-app.get('/',(req,res) => {
-console.log('Hello from console');
+app.get('/',(req,res) => {c
+// the normal way to render to page
+// res.send('Hello world from express!')
 
-res.send('Hello world from express!')
+
+// and you have have for example title 
+// you could send it like this 
+let title = "Hello from hbs";
+// the way to render with handlebars
+res.render('home', {layout: false}, title);
+
 })
 // reouting with params 
 app.get('/cats/:id',(req,res) => {
