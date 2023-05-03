@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PU_UniProject.BO.Models;
-using PU_UniProject.Web.Models;
-using System.Diagnostics;
 using System.Text;
 
 namespace PU_UniProject.Web.Controllers
@@ -50,6 +48,7 @@ namespace PU_UniProject.Web.Controllers
 			{
 				// sending the model for the post method in the API
 				StringContent content = new StringContent(JsonConvert.SerializeObject(model), encoding: Encoding.UTF8, "application/json" ); 
+
 				//  sending post method
 				using (var response = await httpClient.PostAsync("the url of the api", content))
 				{
