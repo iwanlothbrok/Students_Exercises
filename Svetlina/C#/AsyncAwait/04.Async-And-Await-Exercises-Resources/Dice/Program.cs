@@ -2,12 +2,12 @@
 
 class Program
 {
-	public static void Main()
+	static async Task Main(string[] args)
 	{
-		var result = DiceRollAsync();
-
-		Console.WriteLine($"Your dice roll result is {result}");
+		int result = await DiceRollAsync();
+		Console.WriteLine("The dice roll result is: " + result);
 	}
+
 
 	static async Task<int> DiceRollAsync()
 	{
