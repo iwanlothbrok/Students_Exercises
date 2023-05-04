@@ -8,11 +8,15 @@ namespace Collage
         static void Main()
         {
             CollageDBContext context = new CollageDBContext();
+
+
+            CoursesInfo(context);
         }
 
         static void CoursesInfo(CollageDBContext context)
         {
             // TODO: prints to the console for each course its name, credits, department name and department budget
+            System.Console.WriteLine(context.Course.Find(1));
         }
 
         static void DepartmentAndCredits(CollageDBContext context)
