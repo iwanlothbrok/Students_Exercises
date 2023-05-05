@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualBasic;
-
-public class Program
+﻿public class Program
 {
 	public static void Main()
 	{
