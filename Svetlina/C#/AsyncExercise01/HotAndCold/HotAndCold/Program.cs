@@ -7,6 +7,8 @@ public class Program
 		Thread t1 = new Thread(PrintCold);
 		t1.Start();
 
+		t1.Join();
+
 		PrintHot();
 	}
 	public static void PrintCold()
