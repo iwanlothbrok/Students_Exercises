@@ -7,7 +7,7 @@ public class Program
 		Thread t1 = new Thread(PrintCold);
 		t1.Start();
 
-		t1.Join();
+		t1.Join(); // Wait for t1 to complete before proceeding its for second exercise
 
 		PrintHot();
 	}

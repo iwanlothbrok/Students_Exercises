@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotAndCold", "HotAndCold\HotAndCold.csproj", "{028A2CAF-092A-4289-9243-FBD82BA6C696}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPrints", "3.ThreadPrints\ThreadPrints.csproj", "{D258B503-2226-4F96-9978-A059797C6087}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{028A2CAF-092A-4289-9243-FBD82BA6C696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028A2CAF-092A-4289-9243-FBD82BA6C696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{028A2CAF-092A-4289-9243-FBD82BA6C696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D258B503-2226-4F96-9978-A059797C6087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D258B503-2226-4F96-9978-A059797C6087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D258B503-2226-4F96-9978-A059797C6087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D258B503-2226-4F96-9978-A059797C6087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
