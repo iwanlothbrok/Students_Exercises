@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotAndCold", "HotAndCold\Ho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPrints", "3.ThreadPrints\ThreadPrints.csproj", "{D258B503-2226-4F96-9978-A059797C6087}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleThreads", "MultipleThreads\MultipleThreads.csproj", "{BF7CEDF8-0348-42F0-8455-F8BCCBB42AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D258B503-2226-4F96-9978-A059797C6087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D258B503-2226-4F96-9978-A059797C6087}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D258B503-2226-4F96-9978-A059797C6087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF7CEDF8-0348-42F0-8455-F8BCCBB42AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7CEDF8-0348-42F0-8455-F8BCCBB42AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7CEDF8-0348-42F0-8455-F8BCCBB42AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7CEDF8-0348-42F0-8455-F8BCCBB42AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
