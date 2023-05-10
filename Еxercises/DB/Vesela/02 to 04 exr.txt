@@ -1,0 +1,16 @@
+ 02
+		SELECT * FROM person
+			WHERE eye_Color = 'blue'
+ 
+ 
+		03 
+        SELECT brand, AVG(horse_power)
+			FROM car
+				GROUP BY brand
+ 
+		04
+        SELECT first_name,last_name,place_name
+			FROM person
+              JOIN fav_places
+            ON person.fav_place_id =fav_places.fav_place_id
+ 
