@@ -1,0 +1,46 @@
+09
+DELIMITER $$
+CREATE PROCEDURE usp_get_people_names_by_height2(IN _height INT)
+BEGIN
+	DECLARE person_firstname VARCHAR(50);
+	DECLARE done INT DEFAULT FALSE;
+ 
+	-- Create a cursor to select the customer name from the customer table
+	-- for the specified country parameter
+	DECLARE person_cursor CURSOR FOR
+		SELECT first_name FROM person
+		WHERE height > _height
+		ORDER BY first_name ASC;
+ 
+	-- Declare handlers for exceptions
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+ 
+	-- Open the cursor
+	OPEN person_cursor;
+ 
+	-- CHECK IF IS THE CORRECT PROP
+	FETCH person_cursor INTO person_firstname;
+ 
+	-- Loop through each row returned by the cursor
+	person_loop: LOOP
+		-- Exit the loop if there are no more rows
+		IF done THEN
+			LEAVE person_loop;
+		END IF;
+ 
+		-- Process each row returned by the cursor
+		-- For example, you could print the customer name or insert it into another table
+		SELECT person_firstname;
+ 
+		-- Fetch the next row
+		FETCH person_cursor INTO person_firstname;
+	END LOOP;
+ 
+	-- Close the cursor and deallocate its memory
+	CLOSE person_cursor;
+ 
+END$$
+DELIMITER ;
+ 
+ 
+CALL usp_get_people_names_by_height2(180);
