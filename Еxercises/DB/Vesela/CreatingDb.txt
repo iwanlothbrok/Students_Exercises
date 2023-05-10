@@ -1,0 +1,61 @@
+CREATE DATABASE Habit_Tracker
+ 
+CREATE TABLE person(
+id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+family_name VARCHAR(50) NOT NULL,
+egn VARCHAR(10) NOT NULL UNIQUE,
+address VARCHAR(100) NOT NULL,
+email VARCHAR(50) NOT NULL,
+phone VARCHAR(10) NULL DEFAULT NULL,
+status VARCHAR(20) NULL DEFAULT NULL,
+shoes_size int,
+tshirt_size varchar(5) NULL DEFAULT NULL, 
+eye_color varchar(20) NULL DEFAULT NULL,
+height INT,
+car_id INT NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (car_id) REFERENCES car(car_id)
+);
+ 
+create table car(
+car_id INT AUTO_INCREMENT PRIMARY KEY,
+brand varchar(30) NOT NULL,
+model varchar(30) NOT NULL,
+horse_power int NOT NULL,
+color varchar(30) NOT NULL
+)
+ 
+create table fav_places(
+fav_place_id INT AUTO_INCREMENT PRIMARY KEY,
+country varchar(20) NOT NULL,
+city varchar(20) NOT NULL,
+address varchar(100) NOT NULL,
+GPS varchar(50) NOT NULL UNIQUE,
+TYPE varchar(20) NOT NULL,
+ workingTimeOnWeek VARCHAR(50),
+ workingTimeOnWeekend VARCHAR(50)
+ );
+ 
+  create table visitors(
+  visitors_id  INT AUTO_INCREMENT PRIMARY KEY,
+  first_person_id INT NOT NULL,
+  second_person_id INT NULL,
+  third_person_id INT NULL,
+  fourth_person_id INT NULL,
+  place_id INT NOT NULL,
+   is_person_alone BIT,
+  date_of_coming DATE NOT NULL,
+  time_of_coming TIME NOT NULL,
+  time_of_leaving TIME NOT NULL,
+  FOREIGN KEY (first_person_id) REFERENCES person(id),
+  FOREIGN KEY (second_person_id) REFERENCES person(id),
+  FOREIGN KEY (third_person_id) REFERENCES person(id),
+  FOREIGN KEY (fourth_person_id) REFERENCES person(id),
+   FOREIGN KEY (place_id) REFERENCES fav_places(fav_place_id))
+ 
+  ALTER TABLE person ADD COLUMN fav_place_id INT;
+  ALTER TABLE person ADD CONSTRAINT FV_id FOREIGN KEY (fav_place_id) REFERENCES fav_places (fav_place_id);
+ 
+  ALTER TABLE fav_places ADD COLUMN place_name VARCHAR(50);

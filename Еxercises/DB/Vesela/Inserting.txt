@@ -1,0 +1,41 @@
+INSERT INTO car  (brand,model,horse_power,color)
+VALUES						
+		('Mercedes','S 500', 450,'Black'),
+        ('Lada','E110', 200,'White'),
+        ('BMW','E91', 320,'Black'),
+		('Mercedes','GLE 500', 500,'White'),
+		('BMW','E46', 125,'Blue'),
+		('Toyota','Corolla', 100,'White'),
+		('Mercedes','E220', 150, 'Black')
+ 
+INSERT INTO fav_places(country,city,address,gps,type,workingTimeOnWeek,workingTimeOnWeekend,place_name)
+VALUES					
+								('BG','Sofia', 'Kapitan 61','1253.912.123', 'Restaurant', '23:00', '00:00','Razkosh'),
+								('BG','Sofia', 'Vasil Levski','123.12.153', 'Shisha Bar', '01:00', '03:00','Shisha Bar'),
+								('BG','Yambol', 'Slaveikov','23.411.153', 'Art Gallery', '17:00', Null,'Muzei'),
+								('BG','SOfia', 'Kapitan Petko 53','123.92.123', 'Coffee Shop', '00:00', '23:00','Happy'),
+								('BG','SOfia', 'Hristo Botev 23','2.96.22125', 'Bar', '03:00', '05:00','Hamabr'),
+								('BG','SOfia', 'Mariya Luiza 122','6123.96.225', 'Restaurant', '23:00', '22:30','Raffy'),
+								('BG','Plovdiv', 'Kuchuka','9.96.225', 'Disco', '04:00', '06:00','33')
+ 
+ 
+  INSERT INTO person (first_name,last_name,family_name,egn,address,email,phone,status,shoes_Size,tshirt_Size,eye_Color,height,car_id,fav_place_id)
+		VALUES 
+        			  ('Rosi', 'Ivanova','Georgieva','4075500545','Sofia-Mladost 7','geri@abv.bg','0888857520','single',37,'S','blue',170,6,null),
+			  ('Geri', 'Ivanov','Ivanova','4011500545','Sofia-Mladost 7','geri@abv.bg','0893457520','single',37,'S','blue',170,6,7),
+			  ('Ivo', 'Petrov','Qnakiev','0011500545','Vyzrojdenci','ivcho@abv.bg','0883450020','single',47,'M','blue',176,7,11),
+			  ('Iliyan', 'Ivanov','Petrov','9401150045','Sofia-Mladost 1','ilian@abv.bg','0893452120','married',45,'XLL','blue',180,2,7),
+			  ('Pepo', 'Tsvetkov','Ivanov','6361150045','Sofia-Mladost 5','pepo@abv.bg','0867452120','single',42,'S','brown',170,1,8),
+			  ('Gogo', 'Ivanov','Georgiev','9401150654','Lyulin 1','gogo@abv.bg','0893452142','married',44,'M','blue',185,4,5),
+			  ('Aleksandra', 'Ivanova','Georgieva','9465450654','Lyulin 7','ali@abv.bg','089322142','single',38,'M','blue',160,3,6)
+ 
+ 
+              INSERT INTO visitors (first_person_id,second_person_id,third_person_id,fourth_person_id,place_id,is_person_alone,date_of_coming,time_of_coming,time_of_leaving)
+		VALUES
+        (1,NULL,NULL,NULL,9,TRUE,'2022-03-10','10:30:00','13:30:00'),
+        (10,NULL,NULL,NULL,9,TRUE,'2023-03-10','10:30:00','13:30:00'),
+        (8,9,10,NULL,11,false,'2022-10-05','10:30:00','13:30:00')
+        (1,NULL,NULL,NULL,7,true,'2023-05-05','15:30:00','16:30:00')
+        (6,7,8,NULL,8,false,'2023-06-05','23:30:00','03:30:00')
+ 
+ 
