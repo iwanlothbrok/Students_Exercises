@@ -18,7 +18,7 @@ page(addSession);
 page(addRender);
 
 page('/', homePage);
-page('/catalog', catalogPage);
+page('/	', catalogPage);
 page('/login', loginPage);
 page('/register', registerPage);
 page('/create', createPage);
