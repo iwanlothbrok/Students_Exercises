@@ -1,4 +1,4 @@
-const { Schema, model } = required('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 // similar to the db models in asp
