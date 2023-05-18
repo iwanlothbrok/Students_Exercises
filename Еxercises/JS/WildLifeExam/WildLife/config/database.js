@@ -1,5 +1,7 @@
 
 const mongoose = require('mongoose');
+require('../models/User')
+
 
 const dbName = 'wildlife'
 const connectionString = `mongodb://localhost:27017/${dbName}`;
@@ -20,6 +22,4 @@ module.exports = async (app) => {
         console.log('Error connection to database');
         process.exit(1);
     }
-
-
 }
