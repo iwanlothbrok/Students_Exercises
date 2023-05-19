@@ -9,13 +9,13 @@ start();
 async function start() {
     const app = express();
 
-    expressConfig(app); 
+    expressConfig(app);
     await databaseConfig(app);
     routesConfig(app);
-    
+
     // renders the home view
-    app.get('/',(req,res) => res.render('home', {layout : false}));
-    
+    app.get('/', (req, res) => res.render('home', { layout: false }));
+
     // starting server on port 3001
-    app.listen(3001, () =>console.log('Server is listening'));
+    app.listen(3001, () => console.log('Server is listening'));
 }
