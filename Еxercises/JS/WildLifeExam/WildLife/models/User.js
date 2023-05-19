@@ -3,12 +3,14 @@ const { Schema, model } = require('mongoose');
 
 // similar to the db models in asp
 const userSchema = new Schema({
-    username: { type: String, require: true },
+    firstName: { type: String, require: true },
+    lastName: { type: String, require: true },
+    email: { type: String, require: true },
     hashedPassword: { type: String, require: true }
 });
 
 // for sorting on param username, 1 for asc -1 for desc
-userSchema.index({ username: 1 }, {
+userSchema.index({ email: 1 }, {
     unique: true,
     // to become case insensetive
     collation: {
