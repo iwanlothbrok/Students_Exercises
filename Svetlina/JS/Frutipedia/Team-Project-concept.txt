@@ -1,0 +1,58 @@
+You are assigned to implement a Web app, called "Fruitipedia", holding a catalog of fruits. The app is unfinished, so you need to implement the missing logic.
+
+Teams should consist of 4 people, each of them accepting a different role for different issues.
+
+App Functionalities
+  - Home
+    - The page exists, but the image is missing
+  - View Fruit Catalog
+    - The page exists and works correctly, but the CSS in not OK, and it looks ugly
+  - Fruit Info
+    - The page is missing
+  - Search Fruits
+    - The page exists, but the [Search] button functionality is missing
+  - Register
+    - The page work correctly
+  - Login
+    - The page exists, but the [Login] button functionality is missing
+  - Add Fruit
+    - The [Add fruit] page exists and works correctly, but it should be available after login only (we have a bug)
+  - Edit Fruit
+    - The page exists and works, but the validation is missing
+  - Delete Fruit
+    - The [Delete] fruit button does not work
+
+Tasks
+
+  - Project Setup
+    - Create a GitHub repo
+	- Import the existing code in the Repo
+	- Create the branches: qa, staging
+	- Setup the app environments in Render.com: production, qa, staging
+	- Create an empty issue board in GitHub Projects
+	- Think about what labels you are going to use during the app development and use them on issues
+	- Create prototypes for the "View Fruit Catalog" and "Fruit Info" pages to plan how they would look
+
+  - Create the Issues (only give them hints)
+	- Home page: add image
+	- View fruit catalog: add CSS
+    - Fruit info: implement the page
+      (controller + view)
+    - Search fruits: implement the [Search] button
+	  (controller + view)
+    - Login: implement the login logic
+	  (controller)
+	- Add fruit: authentication bug
+	- Edit fruit: add validation
+	- Delete fruit: implement the logic
+
+  - For each issue:
+    - As a feature developer: create a feature branch, move the issue into "In Progress", implement the logic, tag the issue "For testing", merge the branch in the QA branch
+	- As a QA: validate the issue, tag the issue "QA: Verified", move the issue to "Verified"
+	- As a feature developer: create a pull request for merging the feature branch into the "staging" branch
+	- As a senior developer: make a code review and allows merging the feature branch into the "staging" branch, then moves the issue to "For Deploy"
+	- As a feature developer: delete the feature branch and close the issue, after the feature branch was succesfully merged to the "staging" branch
+
+  - Deploy to production
+    - As a deployment engineer: when one or several issues are waiting for deployment, deploy to production
+	 - Move all issues from "For Deploy" to "Done"

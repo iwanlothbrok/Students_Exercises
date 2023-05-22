@@ -1,0 +1,30 @@
+﻿
+
+public class Program
+{
+	public static void Main()
+	{
+		Thread t1 = new Thread(PrintCold);
+		t1.Start();
+
+		t1.Join(); // Wait for t1 to complete before proceeding its for second exercise
+
+		PrintHot();
+	}
+	public static void PrintCold()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Console.WriteLine(" Cold ");
+			Thread.Sleep(200);
+		}
+	}
+	public static void PrintHot()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Console.WriteLine("Hot");
+			Thread.Sleep(200);
+		}
+	}
+}

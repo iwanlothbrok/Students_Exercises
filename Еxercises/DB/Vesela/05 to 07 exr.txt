@@ -1,0 +1,28 @@
+  05
+              SELECT * FROM person
+				LEFT JOIN fav_places
+					ON  person.fav_place_id =fav_places.fav_place_id
+				UNION
+				SELECT * FROM person
+					RIGHT JOIN fav_places 
+						ON  person.fav_place_id =fav_places.fav_place_id
+ 
+        05.5 left i right
+ 
+        SELECT first_name, last_name, place_name
+		FROM person
+		LEFT OUTER JOIN fav_places
+		ON person.fav_place_id = fav_places.fav_place_id;
+ 
+        SELECT first_name, last_name, place_name
+		FROM person
+		RIGHT OUTER JOIN fav_places
+		ON person.fav_place_id = fav_places.fav_place_id;
+ 
+		06
+            SELECT model,brand
+				FROM  car
+				WHERE car_id = ANY(
+					SELECT car_id FROM person
+						WHERE status = 'single' 
+				);
