@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceExample", "Inher
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EncapsulationExample", "EncapsulationExample\EncapsulationExample.vcxproj", "{006958FA-CEAE-4807-A4B5-5E9E02012FBF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AbstractionExample", "AbstractionExample\AbstractionExample.vcxproj", "{3C7DC677-8A0E-403E-9884-94130B568707}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{006958FA-CEAE-4807-A4B5-5E9E02012FBF}.Release|x64.Build.0 = Release|x64
 		{006958FA-CEAE-4807-A4B5-5E9E02012FBF}.Release|x86.ActiveCfg = Release|Win32
 		{006958FA-CEAE-4807-A4B5-5E9E02012FBF}.Release|x86.Build.0 = Release|Win32
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Debug|x64.ActiveCfg = Debug|x64
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Debug|x64.Build.0 = Debug|x64
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Debug|x86.ActiveCfg = Debug|Win32
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Debug|x86.Build.0 = Debug|Win32
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Release|x64.ActiveCfg = Release|x64
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Release|x64.Build.0 = Release|x64
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Release|x86.ActiveCfg = Release|Win32
+		{3C7DC677-8A0E-403E-9884-94130B568707}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
