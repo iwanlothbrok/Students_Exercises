@@ -30,21 +30,66 @@ function reducer(state, { type, payload }) {
 
 
         case ACTIONS.CHOOSE_OPERATION:
-            if (state.currentOperand == null && state.previousOperand == null){
+            if (state.currentOperand == null && state.previousOperand == null) {
                 return state;
             }
 
-            if(state.previousOperand == null){
-                return{
+            if (state.currentOperand == null) {
+                return {
                     ...state,
+                    operation: payload.operation
+                };
+            }
+
+            if (state.previousOperand == null) {
+                return {
+                    ...state,
+                    operation: payload.operation,
+                    previousOperand: state.currentOperand,
+                    currentOperand: null
                 }
+            }
+
+            return {
+                ...state,
+                previousOperand: evaluate(state),
+                operation: payload.operation,
+                currentOperand: null
             }
 
         case ACTIONS.CLEAR:
             return {}
-
-
     }
+}
+
+function evaluate({ currentOperand, previousOperand, operation }) {
+    const prev = parseFloat(previousOperand);
+    const curr = parseFloat(currentOperand);
+
+    if (isNaN(prev) || isNaN(curr)) {
+        return "";
+    }
+
+    let computation = '';
+
+    switch (operation) {
+        case '+':
+            computation = prev + curr;
+            break;
+        case '-':
+            computation = prev - curr;
+            break;
+        case '*':
+            computation = prev * curr;
+            break;
+        case '/':
+            computation = prev / curr;
+            break;
+        default:
+            break;
+    }
+
+    return computation.toString();
 }
 
 export default function App() {
