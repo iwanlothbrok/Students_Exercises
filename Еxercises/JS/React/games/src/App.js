@@ -8,28 +8,29 @@ import DetailsGame from "./components/DetailsGame";
 import CatalogGame from "./components/CatalogGame";
 
 function App() {
+  const router = {
+    '/home': Home,
+    '/register': Register,
+    '/games' : CatalogGame,
+    '/login' : Login,
+    '/create-game' : CreateGame
+  };
   return (
-
     <div id="box">
 
       <Header />
 
       <main id="main-content">
+        <Home />
       </main>
 
-      <Home />
-
+      {/* 
       <Login />
-
       <Register />
-
       <CreateGame />
-
       <EditGame />
-
       <DetailsGame />
-      
-      <CatalogGame />
+      <CatalogGame /> */}
     </div>
   );
 }

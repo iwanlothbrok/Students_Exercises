@@ -1,4 +1,13 @@
 export default function Header() {
+    const onHeaderClick = (e) => { 
+      e.preventDefault();
+
+      if (e.target.tagName == 'A') {
+        let url = new URL(e.target.href);
+
+        console.log(url);
+      }
+    }
     return(
         <header>
         <h1><a className="home" href="#">GamesPlay</a></h1>
