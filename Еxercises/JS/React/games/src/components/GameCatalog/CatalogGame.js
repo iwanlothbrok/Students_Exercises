@@ -1,6 +1,9 @@
 
 import { useEffect, useState } from 'react';
 import GameCard from './GameCard';
+import * as gameService from '../../services/gameService'
+
+
 export default function CatalogGame(
     {
         navigationChangeHandler,
@@ -20,11 +23,11 @@ export default function CatalogGame(
 
 
     useEffect(() => {
-        fetch('http://localhost:3030/data/games?sortBy=_createdOn%20desc')
-            .then(res => res.json()
-                .then(result => {
-                    setGame(result);
-                }));
+        gameService.getAll()
+            .then(res => {
+                setGame(res);
+            })
+
     }, []);
 
 
@@ -37,7 +40,7 @@ export default function CatalogGame(
                 : <h3 className="no-articles">No articles yet</h3>
             };
 
- 
+
         </section>
     )
 }
