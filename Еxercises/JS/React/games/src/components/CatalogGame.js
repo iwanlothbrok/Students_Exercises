@@ -1,7 +1,11 @@
+
+import { useEffect, useState } from 'react';
+
 export default function CatalogGame(
     {
         navigationChangeHandler,
     }) {
+
     const onDetailsButtonClick = (e) => {
         e.preventDefault();
 
@@ -10,6 +14,21 @@ export default function CatalogGame(
             navigationChangeHandler(url.pathname);
         }
     }
+
+    const GameCatalog = () => {
+        const [games, setGame] = useState([]);
+
+
+        useEffect(() => {
+            fetch('http://localhost:3030/data/games?sortBy=_createdOn%20desc')
+                .then(res => res.json()
+                    .then(result => {
+                        setGame(result);
+                    }));
+        }, []);
+    }
+
+
     return (
         <section id="catalog-page" onClick={onDetailsButtonClick}>
             <h1>All Games</h1>
