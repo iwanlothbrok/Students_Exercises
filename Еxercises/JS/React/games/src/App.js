@@ -8,15 +8,15 @@ import Register from "./components/Register";
 import CreateGame from "./components/CreateGame";
 import EditGame from "./components/EditGame";
 import DetailsGame from "./components/DetailsGame";
-import CatalogGame from "./components/CatalogGame";
+import CatalogGame from "./components/GameCatalog/CatalogGame";
 
 function App() {
   const [page, setPage] = useState('/home');
-  
+
   const navigationChangeHandler = (path) => {
     setPage(path)
   }
-  
+
   const router = {
     '/home': <Home />,
     '/register': <Register />,
