@@ -8,7 +8,6 @@ export default function Header(
     if (e.target.tagName === 'A') {
       let url = new URL(e.target.href);
       navigationChangeHandler(url.pathname); 
-      console.log(url);
     }
   }
   return (
