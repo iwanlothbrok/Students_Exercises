@@ -44,7 +44,7 @@ function App() {
       <Header navigationChangeHandler={navigationChangeHandler} />
 
       <main id="main-content">
-        {router[page] || <h2>No Page Founded!</h2>}
+        {router(page) || <h2>No Page Founded!</h2>}
       </main>
 
     </div>

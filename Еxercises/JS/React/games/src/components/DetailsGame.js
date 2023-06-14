@@ -1,7 +1,18 @@
+import { useState, useEffect } from "react";
+
+import * as gameService from '../services/gameService';
+
 
 export default function DetailsGame() {
-    return (
+    const [game, setGame] = useState({});
+     
+    useEffect(async () => {
+        let result = await gameService.getOne(id);
 
+        setGame(result);
+    },[]);
+
+    return (
         <section id="game-details">
             <h1>Game Details</h1>
             <div className="info-section">
