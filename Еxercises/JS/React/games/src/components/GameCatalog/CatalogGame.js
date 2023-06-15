@@ -4,21 +4,7 @@ import GameCard from './GameCard';
 import * as gameService from '../../services/gameService'
 
 
-export default function CatalogGame(
-    {
-        navigationChangeHandler,
-    }) {
-
-    const onDetailsButtonClick = (e) => {
-        e.preventDefault();
-
-        if (e.target.tagName === 'A') {
-            let url = new URL(e.target.href);
-            navigationChangeHandler(url.pathname);
-        }
-    }
-
-
+export default function CatalogGame({game}) {
     const [games, setGame] = useState([]);
 
 
@@ -31,15 +17,13 @@ export default function CatalogGame(
 
 
     return (
-        <section id="catalog-page" onClick={onDetailsButtonClick}>
+        <section id="catalog-page" >
             <h1>All Games</h1>
 
             {games.length > 0
-                ? games.map(x => <GameCard key={x._id} game={x} navigationChangeHandler={navigationChangeHandler}/>)
+                ? games.map(x => <GameCard key={x._id} game={x} />)
                 : <h3 className="no-articles">No articles yet</h3>
             };
-
-
         </section>
     )
 }

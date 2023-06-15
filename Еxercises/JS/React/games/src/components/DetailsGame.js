@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
 import * as gameService from '../services/gameService';
+import { useParams } from "react-router-dom";
 
+export default function DetailsGame({match}) {
 
-export default function DetailsGame({id}) {
-      
     const [game, setGame] = useState({});
-     
+    const { gameId } = useParams();
+
+    console.log(gameId);
+ 
+   // let match = '';
     useEffect(async () => {
-        let result = await gameService.getOne(id);
+        let result = await gameService.getOne(gameId);
 
         setGame(result);
-    },[]);
+    }, []);
 
     return (
         <section id="game-details">
