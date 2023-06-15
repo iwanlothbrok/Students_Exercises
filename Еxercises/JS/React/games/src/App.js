@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 
+import { Route, Routes } from 'react-router-dom';
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
@@ -44,7 +45,14 @@ function App() {
       <Header navigationChangeHandler={navigationChangeHandler} />
 
       <main id="main-content">
-        {router(page) || <h2>No Page Founded!</h2>}
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/create-game' element={<CreateGame />} />
+          <Route path='/games' element={<CatalogGame />} />
+        </Routes>
+
       </main>
 
     </div>
