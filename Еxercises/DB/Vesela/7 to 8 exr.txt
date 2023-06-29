@@ -9,4 +9,4 @@
 		08
        CREATE TRIGGER person_height_working_decrease BEFORE INSERT ON person
 		FOR EACH ROW SET NEW.height = NEW.height - 5;
- 
+	
