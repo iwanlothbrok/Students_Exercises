@@ -17,7 +17,7 @@ router.post('/register', isGuest(), async (req, res) => {
         const user = await register(req.body.firstName, req.body.lastName, req.body.email, req.body.password);
         req.session.user = user;
 
-        res.render('/home');
+        res.render('home', { title: 'Home Page' });
     }
     catch (err) {
         const data = {
