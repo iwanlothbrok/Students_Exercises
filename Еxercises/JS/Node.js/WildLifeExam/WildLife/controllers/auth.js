@@ -27,7 +27,7 @@ router.post('/register', isGuest(), async (req, res) => {
             password: req.body.password
         };
 
-        console.log(err);
+        console.log(err);   
         res.render('register', { title: 'Register Page', data });
     }
 });
