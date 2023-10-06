@@ -1,0 +1,68 @@
+* {
+    /* initial values  */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(eduford_img/banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    /* just making it responsive */
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    /* setting all on back but without the flex in the .nav! */
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav img {
+    width: 150px;
+}
+
+
+/* now we are setting them properly */
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+/* clearing the A */
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* when you use hover it sets red underline which is cooler  */
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+    transition: 0.5s;
+
+}
