@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/61b1acc6d5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,11 +15,12 @@
 </head>
 
 <body>
+    <!-- header -->
     <div class="header">
         <nav>
             <a href="#"><img src="/eduford_img/logo.png"></a>
-            <div class="nav-links">
-                <i class="fa-solid fa-bars"></i>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" id="hideBtn" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
@@ -27,7 +29,7 @@
                     <li><a href="">Contact</a></li>
                 </ul>
             </div>
-            <i class="fa-solid fa-bars"></i>
+            <i class="fas fa-bars" id="showBtn" onclick="showMenu()"></i>
         </nav>
         <div class="text-box">
             <h1>Wolrd's biggest Uni</h1>
@@ -39,8 +41,58 @@
 
         </div>
     </div>
+
+    <!-- coruses -->
+    <div class="courses">
+        <h1>Courses We Offer</h1>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cumque quia minus beatae ratione molestiae
+            accusamus ipsam esse temporibus repellat tempore recusandae cum illo suscipit animi, ullam vel nemo totam!
+        </p>
+
+        <div class="row">
+            <div class="col">
+                <h3>Intermediate</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nesciunt sed distinctio commodi libero
+                    adipisci eveniet atque tenetur? Molestias alias nihil eius aspernatur esse quaerat dolore cumque
+                    magnam harum autem.
+                </p>
+            </div>
+            <div class="col">
+                <h3>Intermediate</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nesciunt sed distinctio commodi libero
+                    adipisci eveniet atque tenetur? Molestias alias nihil eius aspernatur esse quaerat dolore cumque
+                    magnam harum autem.
+                </p>
+            </div>
+            <div class="col">
+                <h3>Intermediate</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nesciunt sed distinctio commodi libero
+                    adipisci eveniet atque tenetur? Molestias alias nihil eius aspernatur esse quaerat dolore cumque
+                    magnam harum autem.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
     <main></main>
     <footer></footer>
+
+    <script>
+        let navLinks = document.getElementById('navLinks');
+
+        function showMenu() {
+            navLinks.style.right = 0;
+        }
+        function hideMenu(e) {
+            navLinks.style.right = '-200px';
+        }
+    </script>
 </body>
 
 </html>
